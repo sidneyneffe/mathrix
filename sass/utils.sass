@@ -1,0 +1,62 @@
+$headerHeight: 80px
+
+
+$primary: #3F51B5
+$secondary: #303F9F
+$tertiary: #7986CB
+$accent: #FF4081
+$accent2: #FF80AB
+$background: #fff
+
+/* latin */
+@font-face
+	font-family: 'Nunito'
+	font-style: normal
+	font-weight: 400
+	src: local('Nunito Regular'), local('Nunito-Regular'), url(../utils/nunito.woff2) format('woff2')
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215
+
+=font
+	font-family: 'Nunito', Arial, sans-serif
+
+
+
+=noselect
+	-webkit-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+	cursor: default
+
+=transition($args...)
+	-webkit-transition: $args
+	-moz-transition: $args
+	-ms-transition: $args
+	-o-transition: $args
+	transition: $args
+
+=transition0
+	+transition(all 0.3s)
+
+=transform($args...)
+	-webkit-transform: $args
+	-moz-transform: $args
+	-ms-transform: $args
+	-o-transform: $args
+	transform: $args
+
+=translate($args...)
+	+transform(translate($args))
+
+=translate_middle
+	+translate(-50%, -50%)
+
+=box-sizing($args...)
+	-webkit-box-sizing: $args
+	-moz-box-sizing: $args
+	-ms-box-sizing: $args
+	-o-box-sizing: $args
+	box-sizing: $args
+
+=box-sizing0
+	+box-sizing(border-box)

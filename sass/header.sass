@@ -1,0 +1,62 @@
+@import utils
+header
+	position: fixed
+	z-index: 50
+	top: 0
+	height: $headerHeight
+	+noselect
+	background: $primary
+	color: $background
+	width: 100%
+	label
+		+transition(background 0.3s, left 0.3s)
+		position: absolute
+		left: -20%
+		width: 20%
+		height: 100%
+		max-height: $headerHeight
+		max-width: $headerHeight
+		div
+			width: 51%
+			height: 51%
+			background-image: url("../img/back.png")
+			background-size: contain
+			background-repeat: no-repeat
+			background-position: center center
+			position: absolute
+			left: 50%
+			top: 50%
+			+translate_middle
+		img
+			display: none
+			margin: 0 auto
+			display: block
+
+		&:active
+			background: $tertiary
+	& > div
+		+transition(background 0.3s)
+		height: 100%
+		overflow: hidden
+		#current, h1
+			text-align: center
+		h1
+			margin: 0
+			font-weight: normal
+			height: 35%
+			font-size: 0.2 * $headerHeight
+			+box-sizing0
+			padding-top: 0.125*$headerHeight
+			+transition0
+			line-height: 1em
+		#current
+			+transition(opacity 0.3s)
+			height: 65%
+			font-size: 0.4 * $headerHeight
+			+box-sizing0
+			text-transform: uppercase
+
+@media screen and (max-width: 550px)
+	header > div #current
+		font-size: 1.3em
+		padding-top: $headerHeight * 0.1

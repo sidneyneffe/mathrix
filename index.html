@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+    <!--
+    Customize this policy to fit your own app's needs. For more guidance, see:
+        https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+    Some notes:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta name="format-detection" content="telephone=no">
+	<meta charset="utf8">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	<link rel="stylesheet" type="text/css" href="style/nouislider.css">
+	<link rel="stylesheet" type="text/css" href="style/header.css">
+	<link rel="stylesheet" type="text/css" href="style/menu.css">
+	<link rel="stylesheet" type="text/css" href="style/main.css">
+	<link rel="stylesheet" type="text/css" href="style/index.css">
+	<link rel="icon" href="img/logo.png">
+    <title>MATHrix</title>
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/raw.js"></script>
+	<script type="text/javascript" src="js/m_utils.js"></script>
+	<script type="text/javascript" src="js/pages.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript" src="js/mathrix.js"></script>
+</head>
+<body>
+	<input type="checkbox" id="menu_checkbox" checked="checked">
+    <div id="content">
+        <header>
+			<label for="menu_checkbox"><div></div></label>
+			<div>
+				<h1>MATHrix</h1>
+				<div id="current"></div>
+			</div>
+        </header>
+		<noscript>
+			<p>Oh, snap! It seems like your JavaScript is turned off.</p>
+		</noscript>
+		<div id="menu">
+			<div class="container">
+				<table>
+					<thead>
+						<tr>
+							<th>Vectors</th>
+							<th>Matricies</th>
+						</tr>
+					</thead>
+				</table>
+				<div id="about">
+					<h3>About</h3>
+					<p>Developed in 2017 by Sidney Neffe.</p>
+					<p><a href="licenses/licenses.html">Licenses</a>
+				</div>
+			</div>
+		</div>
+		<div id="main">
+			<div id="main_length">
+				<div class="input">
+					<div id="len_slider"></div>
+					<div id="len_slider_val"></div>
+					<div class="clear"></div>
+					<div class="matrix"><table id="len_vector"></table></div>
+					<button id="len_pasteBtn">Paste</button>
+					<button id="len_clearBtn">Clear</button>
+				</div>
+				<div class="result" id="len_result">
+					<div class="inner"></div>
+					<div class="exact"></div>
+				</div>
+			</div>
+			<div id="main_dotproduct">
+				<div class="input">
+					<div id="dot_slider"></div>
+					<div id="dot_slider_val"></div>
+
+					<table>
+						<tr>
+							<td><div class="matrix"><table id="dot_vector0"></table></div></td>
+							<td class="symbol" rowspan="2">&middot;</td>
+							<td><div class="matrix"><table id="dot_vector1"></table></div></td>
+						</tr>
+						<tr>
+							<td><button id="dot_pasteBtn0">Paste</button></td>
+							<td><button id="dot_pasteBtn1">Paste</button></td>
+						</tr>
+					</table>
+
+					<button id="dot_clearBtn">Clear</button>
+				</div>
+				<div class="result" id="dot_result">
+					<div class="inner"></div>
+					<div class="exact"></div>
+					<div class="text"></div>
+				</div>
+			</div>
+			<div id="main_vectorproduct">
+				<div class="input">
+					<table>
+						<tr>
+							<td><div class="matrix"><table id="vp_vector0"></table></div></td>
+							<td class="symbol" rowspan="2">&times;</td>
+							<td><div class="matrix"><table id="vp_vector1"></table></div></td>
+						</tr>
+						<tr>
+							<td><button id="vp_pasteBtn0">Paste</button></td>
+							<td><button id="vp_pasteBtn1">Paste</button></td>
+						</tr>
+					</table>
+
+					<button id="vp_clearBtn">Clear</button>
+				</div>
+				<div class="result" id="vp_result">
+					<button class="copy" id="vp_copyBtn">Copy</button>
+					<div class="output_matrix"></div>
+					<div class="text"></div>
+				</div>
+			</div>
+			<div id="main_matrixmulti">
+				<div class="input">
+					<div id="mm_slider0"></div>
+					<div id="mm_slider1"></div>
+					<div id="mm_slider2"></div>
+					<div id="mm_slider_val"></div>
+					<div class="matrix"><table id="mm_matrix0"></table></div>
+					<button id="mm_pasteBtn0">Paste</button>
+					<button id="mm_clearBtn0">Clear</button>
+					<button id="mm_copyInputBtn0">Copy</button>
+					<div class="matrix"><table id="mm_matrix1"></table></div>
+					<button id="mm_pasteBtn1">Paste</button>
+					<button id="mm_clearBtn1">Clear</button>
+					<button id="mm_copyInputBtn1">Copy</button>
+				</div>
+				<div class="result" id="mm_result">
+					<button class="copy" id="mm_copyBtn">Copy</button>
+					<div class="output_matrix"></div>
+					<div class="text"></div>
+				</div>
+			</div>
+			<div id="main_determinant">
+				<div class="input">
+					<div id="det_slider"></div>
+					<div id="det_slider_val"></div>
+					<div class="matrix"><table id="det_matrix"></table></div>
+					<button id="det_pasteBtn">Paste</button>
+					<button id="det_clearBtn">Clear</button>
+					<button id="det_copyInputBtn">Copy</button>
+				</div>
+				<div class="result" id="det_result">
+					<div class="inner"></div>
+					<div class="exact"></div>
+				</div>
+			</div>
+			<div id="main_inverse">
+				<div class="input">
+					<div id="inv_slider"></div>
+					<div id="inv_slider_val"></div>
+					<div class="matrix"><table id="inv_matrix"></table></div>
+					<button id="inv_pasteBtn">Paste</button>
+					<button id="inv_clearBtn">Clear</button>
+					<button id="inv_copyInputBtn">Copy</button>
+				</div>
+				<div class="result" id="inv_result">
+					<button class="copy" id="inv_copyBtn">Copy</button>
+					<div class="output_matrix"></div>
+					<div class="text"></div>
+				</div>
+			</div>
+			<div id="main_solve">
+				<div class="input">
+					<div id="sol_slider"></div>
+					<div id="sol_slider_val"></div>
+					<div class="matrix"><table id="sol_matrix"></table></div>
+					<button id="sol_clearBtn">Clear</button>
+				</div>
+				<div class="result" id="sol_result">
+					<button class="copy" id="sol_copyBtn">Copy</button>
+					<div class="before_text"></div>
+					<div class="output_matrix"></div>
+					<div class="inner"></div>
+					<div class="text"></div>
+				</div>
+			</div>
+			<div id="main_random">
+				<div class="input">
+					<div id="rand_slider0"></div>
+					<div id="rand_slider1"></div>
+					<div id="rand_slider_val" style="padding-bottom: 1em;"></div>
+				</div>
+				<div class="result" id="rand_result">
+					<button class="copy" id="rand_copyBtn">Copy</button>
+					<div class="output_matrix"></div>
+				</div>
+			</div>
+		</div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/web-interface.js"></script>
+</body>
+</html>

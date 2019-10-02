@@ -1,0 +1,182 @@
+@import utils
+
+#main
+	+box-sizing0
+	margin: 0 auto
+	padding: 40px 0 0 0
+	height: 100%
+	& > div
+		+box-sizing0
+		background: $primary
+		text-align: center
+		display: none
+		height: 100%
+		&.active
+			display: block
+
+		.noUi-target
+			margin-bottom: 1em
+		.noUi-connect
+			background: $accent
+
+		.warning
+			background: #F44336
+			color: #fff
+			padding: 0.75em 0
+
+		.matrix
+			+noselect
+			width: 100%
+			overflow-x: auto
+			margin-top: 1.25em
+			table
+				width: 100%
+				border-collapse: collapse
+				td
+					width: 2.5em
+					min-width: 3vw
+					input
+						+font
+						width: 100%
+						height: 100%
+						background: transparent
+						border: 0
+						outline: 0
+						padding: 0.75em 0
+						text-align: center
+						font-size: 1em
+				th
+					border-bottom: 2px solid $primary
+					font-size: 1em
+					padding: 0.25em 0 0.5em 0
+
+		button
+			margin: 1em 0
+			+font
+			+noselect
+			padding: 0.3em 0.3em
+			font-size: 1em
+			background: $background
+			+transition0
+			border: none
+			color: #444
+			outline: none
+			text-transform: uppercase
+			border-radius: 0.3em
+
+			&:active
+				background: lighten($primary, 40%)
+				color: $secondary
+			&:disabled
+				background: #bbb
+				color: #858585
+
+
+		.input
+			padding: 0 2.5em
+			background: $background
+		.result
+			padding: 1em 2em 1.5em 2em
+			color: #fff
+			// Die nächste Zeile wird benötigt, falls Bildschirm > 100%
+			background: $primary
+
+			.copy
+				margin-top: 0
+			.operation
+				margin: auto
+				+noselect
+			.inner
+				width: 100%
+				overflow-x: auto
+				div
+					font-size: 4em
+			.hidden
+				display: inline-block
+				overflow: hidden
+				width: 0.5px
+				color: transparent
+			.exact
+				color: #bbb
+				font-size: 0.9em
+				& > span
+					+noselect
+				& > div
+					display: inline-block
+			.text
+				margin-top: 0.5em
+				& > span
+					+noselect
+			.before_text
+				margin-bottom: 0.5em
+
+			.output_matrix
+				width: 100%
+				overflow-x: auto
+				table
+					width: 100%
+					border-collapse: collapse
+					td
+						+font
+						width: 2.5em
+						border: 0.2em solid $tertiary
+						min-width: 2.5em
+						background: transparent
+						padding: 0.5em 0
+						text-align: center
+						font-size: 2em
+
+
+#content
+	#main_vectorproduct
+		.matrix
+			margin-top: 0
+	#main_dotproduct,
+	#main_vectorproduct
+		table
+			width: 100%
+			button
+				margin-top: 0
+		.symbol
+			font-size: 1.7em
+	#main_matrixmulti
+		$color1: $accent
+		$color2: #00B0FF
+		$color3: #1DE9B6
+		.matrix
+			margin-bottom: 0
+		button
+			margin-top: 0.2em
+		#mm_slider0 .noUi-connect
+			background: $color1
+		#mm_slider1 .noUi-connect
+			background: $color2
+		#mm_slider2 .noUi-connect
+			background: $color3
+		#mm_matrix0,
+		#mm_matrix1
+			border: 0.8em solid transparent
+		#mm_matrix0
+			border-top-color: $color2
+			border-left-color: $color1
+		#mm_matrix1
+			border-top-color: $color3
+			border-left-color: $color2
+		.output_matrix table
+			border-top: 0.8em solid $color3
+			border-left: 0.8em solid $color1
+	#main_solve
+		.matrix,
+		.help table.example
+			td:last-child
+				border-left: 2px solid $primary !important
+	#main_random
+		$color1: $accent
+		$color2: #1DE9B6
+		#rand_slider0 .noUi-connect
+			background: $color1
+		#rand_slider1 .noUi-connect
+			background: $color2
+		.output_matrix table
+			border-top: 0.8em solid $color2
+			border-left: 0.8em solid $color1

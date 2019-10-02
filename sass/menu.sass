@@ -1,0 +1,72 @@
+@import utils
+
+
+#menu
+	+box-sizing0
+	+transition(all 0.3s ease-in-out)
+	opacity: 0
+	position: absolute
+	z-index: 20
+	display: none
+	margin: 0 auto
+	overflow: hidden
+	background: #fff
+	color: #222
+	width: 100%
+
+	.container
+		+box-sizing0
+		max-width: 700px
+		overflow: hidden
+		margin: 0 auto
+		padding: 0 2em
+
+	.container div
+		text-align: center
+		width: 100%
+		margin: auto
+		margin-top: 2em
+		+box-sizing0
+		padding: 0 10%
+
+		h3
+			margin-bottom: 0
+		p
+			margin-top: 0.3em
+
+	.container table
+		+box-sizing0
+		width: 100%
+		text-align: center
+		border-collapse: collapse
+		tr
+			th
+				padding-bottom: 0.5em
+				font-size: 1.1em
+			td
+				+box-sizing0
+				width: 50%
+				font-size: 0.75em
+				padding: 0.3em 0.75em
+				button
+					+transition(background 0.3s, color 0.3s)
+					+font
+					+noselect
+					color: #fff
+					display: inline-block
+					padding: 0.8em 0
+					width: 100%
+					font-size: 1em
+					background: $tertiary
+					border: none
+					outline: none
+					border-radius: 0.35em
+
+					&:active
+						background: $primary
+
+	#about
+		border-top: 2px solid #222
+
+@media screen and (max-width: 550px)
+	#menu .container table tr

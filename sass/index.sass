@@ -1,0 +1,67 @@
+
+@import utils
+
+html
+	height: 100%
+
+body
+	margin: 0
+	height: 100%
+	background: $background
+	+font
+	+box-sizing0
+	padding-top: $headerHeight
+
+a
+	color: $accent2
+
+noscript
+	display: block
+	padding: 1em 2em
+	font-size: 1.2em
+	text-align: center
+
+#content
+	overflow: auto
+	height: 100%
+	font-size: 4vw
+	+box-sizing0
+
+@media screen and (min-width: 700px)
+	#content
+		font-size: 20px
+	#main
+		width: 700px
+
+
+#help
+	display: none
+
+.clear
+	clear: both
+
+#menu_checkbox
+	display: none
+	&:checked
+		& ~ #content
+			overflow: hidden
+			header
+				h1
+					height: $headerHeight
+					font-size: 0.5 *$headerHeight
+					line-height: $headerHeight
+					padding-top: 0.05 * $headerHeight
+				& > div
+					//background: #222
+			#menu
+				opacity: 1
+				padding-top: 1em
+				overflow-y: auto
+			#main
+				display: none
+	&:disabled
+		& ~ #content
+			header
+				label
+					&:active
+						background: $primary
