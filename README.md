@@ -1,6 +1,6 @@
 # mathrix
 
-_Mathrix_ is a free, open source, beautiful and intuitive calculator for simple linear algebra problems. It is designed to help students check their solutions and to deeper understand math.
+_Mathrix_ is a free, open source, beautiful and intuitive calculator for simple linear algebra problems. It is designed to help students check their homework and to deepen their understanding of math.
 
 <a href='https://play.google.com/store/apps/details?id=de.sjnsoft.mathrix&utm_source=github&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' height="65px" src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
 
