@@ -2,9 +2,11 @@
 
 _Mathrix_ is a free, open source, beautiful and intuitive calculator for simple linear algebra problems. It is designed to help students check their homework and to deepen their understanding of math.
 
-<a href='https://play.google.com/store/apps/details?id=de.sjnsoft.mathrix&utm_source=github&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' height="65px" src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
+<!--<a href='https://play.google.com/store/apps/details?id=de.sjnsoft.mathrix&utm_source=github&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' height="65px" src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>-->
 
+<!--
 [Start Mathrix in your Browser][browser]
+-->
 
 ## Features
 
@@ -18,13 +20,13 @@ _Mathrix_ is a free, open source, beautiful and intuitive calculator for simple 
 
 ## Installation
 
-Mathrix is available as an app on [Google Play][playstore] and for your [Browser][browser]. You can also build it from source: Make sure you have [Git][git] and [Sass][sass] installed. Then, run:
+Mathrix has been available as an app on Google Play from 2017–2020. It is not longer maintained, but it can be build from source. Make sure [Git][git] and [Sass][sass] are installed. Then, run:
 
 	> git clone https://github.com/sidneyneffe/mathrix
 	> sass --watch sass:style
 	> open index.html
 
-I use [Apache Cordova][cordova] to generate the `apk` file.
+The `apk` can be generated with [Apache Cordova][cordova].
 
 
 ## Screenshots
